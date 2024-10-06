@@ -1,0 +1,90 @@
+# Blender MTL File: 'toyota corrola10.blend'
+# Material Count: 8
+
+newmtl Material.032
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\DELL\\Documents\\jason_colomay\\OPENGL_DIRECTX\\projet_fps_versionQuaternion\\src\\data\\TexturesCom_BuildingsHighRise0495_1_seamless_S.bmp
+
+newmtl Material.033
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\DELL\\Documents\\jason_colomay\\OPENGL_DIRECTX\\projet_fps_versionQuaternion\\src\\data\\TexturesCom_BuildingsHighRise0635_2_seamless_S.bmp
+
+newmtl Material.034
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\DELL\\Documents\\jason_colomay\\OPENGL_DIRECTX\\projet_fps_versionQuaternion\\src\\data\\TexturesCom_HighRiseGlass0017_1_seamless_S.bmp
+
+newmtl Material.035
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\DELL\\Documents\\jason_colomay\\OPENGL_DIRECTX\\projet_fps_versionQuaternion\\src\\data\\TexturesCom_HighRiseGlass0042_1_seamless_S.bmp
+
+newmtl Material.036
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\DELL\\Documents\\jason_colomay\\OPENGL_DIRECTX\\projet_fps_versionQuaternion\\src\\data\\TexturesCom_BuildingsHighRise0311_1_seamless_S.bmp
+
+newmtl Material.037
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\DELL\\Documents\\jason_colomay\\OPENGL_DIRECTX\\projet_fps_versionQuaternion\\src\\data\\TexturesCom_HighRiseGlass0109_2_seamless_S.bmp
+
+newmtl Material.038
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\DELL\\Documents\\jason_colomay\\OPENGL_DIRECTX\\projet_fps_versionQuaternion\\src\\data\\TexturesCom_HighRiseGlass0109_2_seamless_S.bmp
+
+newmtl Material.039
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\DELL\\Documents\\jason_colomay\\OPENGL_DIRECTX\\projet_fps_versionQuaternion\\src\\data\\TexturesCom_HighRiseGlass0109_2_seamless_S.bmp
