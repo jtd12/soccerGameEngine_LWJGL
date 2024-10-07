@@ -212,7 +212,7 @@ public class AnimatedEntity extends entity {
 	{
 		checkInputsManager();
 	}
-	public void inputControl(player p1,player p2)
+	public void inputControl(AnimatedEntity p1,player p2)
 	{
 		float d = (float) Math.sqrt(((p1.getPosition().x - p2.getPosition().x) * (p1.getPosition().x - p2.getPosition().x)) + ((p1.getPosition().y - p2.getPosition().y) * (p1.getPosition().y - p2.getPosition().y)) + ((p1.getPosition().z - p2.getPosition().z)  * (p1.getPosition().z - p2.getPosition().z)));
 		
@@ -239,7 +239,7 @@ public class AnimatedEntity extends entity {
 	}
 	
 
-	public void controlBall(player p1,player p2)
+	public void controlBall(AnimatedEntity p1,player p2)
 	{
 		float d = (float) Math.sqrt(((p1.getPosition().x - p2.getPosition().x) * (p1.getPosition().x - p2.getPosition().x)) + ((p1.getPosition().y - p2.getPosition().y) * (p1.getPosition().y - p2.getPosition().y)) + ((p1.getPosition().z - p2.getPosition().z)  * (p1.getPosition().z - p2.getPosition().z)));
 		

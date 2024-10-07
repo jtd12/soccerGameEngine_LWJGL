@@ -92,10 +92,10 @@ public class gameLoop {
 		
 		List<terrain> terrains=new ArrayList<terrain>();
 		
-		List<player> p=new ArrayList<player>();
-		List<player> pAI=new ArrayList<player>();
+		List<AnimatedEntity> p=new ArrayList<AnimatedEntity>();
+		List<AnimatedEntity> pAI=new ArrayList<AnimatedEntity>();
 		List<AnimatedEntity> manager=new ArrayList<AnimatedEntity>();
-		List<player> goal=new ArrayList<player>();
+		List<AnimatedEntity> goal=new ArrayList<AnimatedEntity>();
 		List<player> balle=new ArrayList<player>();
 		List<player> cars=new ArrayList<player>();
 		List<roues> roues_=new ArrayList<roues>();

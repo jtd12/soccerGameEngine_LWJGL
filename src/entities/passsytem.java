@@ -21,14 +21,14 @@ public class passsytem{
 	
 	}
 
-public void update(List<player> balle, player aiplayer ,float xpos,float xpos2,float zpos,float zpos2,int randX,int randZ,List <player> joueur,
-		List<player > joueurAI){
+public void update(List<player> balle, AnimatedEntity aiplayer ,float xpos,float xpos2,float zpos,float zpos2,int randX,int randZ,List <AnimatedEntity> joueur,
+		List<AnimatedEntity > joueurAI){
 	
 		passer(balle,aiplayer, xpos, zpos2, zpos, zpos2,randX,randZ,joueur,joueurAI);
 	}
 	
-private void passer(List<player> b, player aiplayer, float xpos,float xpos2,float zpos,float zpos2,int randX,int randZ,List<player> joueur,
-		List<player>joueurAI){
+private void passer(List<player> b, AnimatedEntity aiplayer, float xpos,float xpos2,float zpos,float zpos2,int randX,int randZ,List<AnimatedEntity> joueur,
+		List<AnimatedEntity>joueurAI){
 	
 	float distPlayerAIX= aiplayer.getPosition().x- b.get(0).getPosition().x;
 	float distPlayerAIZ= aiplayer.getPosition().z- b.get(0).getPosition().z;

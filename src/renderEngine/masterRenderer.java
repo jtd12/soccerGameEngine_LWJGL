@@ -88,7 +88,7 @@ public Matrix4f getProjection()
 
 
 
-public void renderScene(List<player> supporters,List<player> supporters_element,List<player> p,List<player> pAI, List<player> balle,List<player> goal,List<entity> entities, List<terrain> terrains, light lights,
+public void renderScene(List<player> supporters,List<player> supporters_element,List<AnimatedEntity> p,List<AnimatedEntity> pAI, List<player> balle,List<AnimatedEntity> goal,List<entity> entities, List<terrain> terrains, light lights,
 		camera camera,Vector4f clipPlane) {
 	for (terrain terrain : terrains) {
 		processTerrain(terrain);
@@ -97,12 +97,12 @@ public void renderScene(List<player> supporters,List<player> supporters_element,
 		processEntity(entity);
 	}
 
-	for(player player_:p)
+	for(AnimatedEntity player_:p)
 	{
 		processEntity(player_);
 	}
 	
-	for(player player_:pAI)
+	for(AnimatedEntity player_:pAI)
 	{
 		processEntity(player_);
 	}
@@ -112,7 +112,7 @@ public void renderScene(List<player> supporters,List<player> supporters_element,
 		processEntity(player_);
 	}
 	
-	for(player player_:goal)
+	for(AnimatedEntity player_:goal)
 	{
 		processEntity(player_);
 	}
@@ -139,8 +139,7 @@ public void renderScene(List<player> supporters,List<player> supporters_element,
 public void renderSceneTogether(List<AnimatedEntity> animatedEntities,List<entity> murs,List<player> cars,List<roues> roues_,
 		List<roues> roues2_,List<entity> entities, List<terrain> terrains, light lights,
 		camera camera,Vector4f clipPlane) {
-	
-	float deltaTime=0.01f;
+
 	
 	for (terrain terrain : terrains) {
 		processTerrain(terrain);
@@ -150,7 +149,7 @@ public void renderSceneTogether(List<AnimatedEntity> animatedEntities,List<entit
 	}
 	
 	for (AnimatedEntity animatedEntity : animatedEntities) {
-        animatedEntity.updateAnimation(deltaTime);  // Mets à jour l'animation avec le deltaTime
+        //animatedEntity.updateAnimation(deltaTime);  // Mets à jour l'animation avec le deltaTime
         processEntity(animatedEntity);  // Rends l'entité animée (utilise la bonne frame)
     }
 
@@ -310,7 +309,7 @@ private void createProjectionMatrix()
 }
 
 public void renderShadowMap(List<AnimatedEntity> animatedEntities,List<entity> murs,List<entity> entityList,List<player> cars,List<roues> roues_,
-		List<roues> roues2_,List<player> p,List<player> pAI,List<player> balle,List<player> goal,light sun)
+		List<roues> roues2_,List<AnimatedEntity> p,List<AnimatedEntity> pAI,List<player> balle,List<AnimatedEntity> goal,light sun)
 {// add shader for player
 	
 	for (AnimatedEntity animatedEntity : animatedEntities) {
@@ -327,12 +326,12 @@ public void renderShadowMap(List<AnimatedEntity> animatedEntities,List<entity> m
 		processEntity(player_);
 	}
 	
-	for(player player_:p)
+	for(AnimatedEntity player_:p)
 	{
 		processEntity(player_);
 	}
 	
-	for(player player_:pAI)
+	for(AnimatedEntity player_:pAI)
 	{
 		processEntity(player_);
 	}
@@ -342,7 +341,7 @@ public void renderShadowMap(List<AnimatedEntity> animatedEntities,List<entity> m
 		processEntity(player_);
 	}
 	
-	for(player player_:goal)
+	for(AnimatedEntity player_:goal)
 	{
 		processEntity(player_);
 	}

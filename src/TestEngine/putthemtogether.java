@@ -32,24 +32,23 @@ public class putthemtogether {
 	public Vector3f[] target8=new Vector3f[10];
 	public Vector3f[] target9=new Vector3f[10];
 	List<rawModel> frames = new ArrayList<>();
-	int currentFrame = 0;
 	
 	
-	public void init(loader loader,List<entity> murs,List<player> supporters_element,List<player> supporters, List<player> cars,List<roues>roues_,List<roues> roues2_,List<player> p,List<AnimatedEntity> manager,List<player> balle,List<player> pAI,List<player> goal,texturedModel textureModelBalle,texturedModel textureModelPlayer,texturedModel textureModelPlayer2,texturedModel textureModelGoal,
+	public void init(loader loader,List<entity> murs,List<player> supporters_element,List<player> supporters, List<player> cars,List<roues>roues_,List<roues> roues2_,List<AnimatedEntity> p,List<AnimatedEntity> manager,List<player> balle,List<AnimatedEntity> pAI,List<AnimatedEntity> goal,texturedModel textureModelBalle,texturedModel textureModelPlayer,texturedModel textureModelPlayer2,texturedModel textureModelGoal,
 			texturedModel textureModelGoal2, texturedModel textureModelCars,texturedModel textureModelRoues,
 			texturedModel textureModelRoues2,texturedModel textureModelSupporter,texturedModel textureModelSupporter_element, texturedModel textureModel_murs 
 			)
 	{
 		
-		List<texturedModel> frames=new ArrayList<>();
+		
 		
 		instanceCars(loader,cars,roues_,roues2_,textureModelCars,textureModelRoues,textureModelRoues2);
-		
-		instancePlayersAndBall(loader,goal,p,pAI,balle,textureModelPlayer,textureModelBalle,textureModelPlayer2,textureModelGoal, textureModelGoal2);
+
+		instancePlayersAndBall(loader,goal,p,pAI,balle,textureModelBalle);
 		
 		InstanceTarget();
 		
-		instanceManagerPlayer(frames,loader,manager);
+		instanceManagerPlayer(loader,manager);
 		
 		//instanceSupporters(loader loader,List<player> supporters,List<texturedModel> frames
 				
@@ -189,42 +188,49 @@ public class putthemtogether {
 		instanceTarget(target9,9,400,400);
 	}
 	
-	private void instancePlayersAndBall(loader loader,List<player> goal,List<player> p,List<player> pAI,List<player> balle,texturedModel  textureModelPlayer,texturedModel textureModelBalle,texturedModel textureModelPlayer2, texturedModel textureModelGoal,
-			texturedModel textureModelGoal2)
+	private void instancePlayersAndBall(loader loader,List<AnimatedEntity> goal,List<AnimatedEntity> p,List<AnimatedEntity> pAI,List<player> balle,
+			texturedModel textureModelBalle)
 	{
 		
-		balle.add(new player(textureModelBalle,new Vector3f(600,10,500),0,0,0,1,12,12,12));
 		
 		
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,330),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,340),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,350),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,360),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,370),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,380),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,390),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,400),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,410),0,0,0,1,5,5,5));
-		p.add(new player(textureModelPlayer,new Vector3f(500,10,420),0,0,0,1,5,5,5));
+		List<texturedModel> frames=new ArrayList<>();
+		List<texturedModel> frames2=new ArrayList<>();
+		List<texturedModel> frames3=new ArrayList<>();
+		List<texturedModel> frames4=new ArrayList<>();
+		
+		balle.add(new player(textureModelBalle,new Vector3f(600,10,500),0,0,0,1,5,5,5));
 		
 		
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,330),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,340),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,350),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,360),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,370),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,380),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,390),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,400),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,410),0,180,0,1,5,5,5));
-		pAI.add(new player(textureModelPlayer2,new Vector3f(550,10,420),0,180,0,1,5,5,5));
-		
-		goal.add(new player(textureModelGoal,new Vector3f(500,10,430),0,0,0,1,5,5,5));
-		goal.add(new player(textureModelGoal2,new Vector3f(550,10,430),0,180,0,1,5,5,5));
+		 for (int i = 0; i < 10; i++) {
+		        AnimatedEntity playerEntity = loadAnimatedEntity(frames, "/playerAnim/", "texture", loader, 54,
+		                new Vector3f(500, 10, 330 + (i * 10)), 0, 0, 0, 1, 1, 1, 1);
+		        p.add(playerEntity);
+		    }
+		 
+	
+		 
+		    
+		    // Création des joueurs IA
+		    for (int i = 0; i < 10; i++) {
+		        AnimatedEntity playerEntityAI = loadAnimatedEntity(frames2, "/playerAnimAI/", "texture2", loader, 54,
+		                new Vector3f(550, 10, 330+(i*10)), 0, 0, 0, 1, 1, 1, 1);
+		        pAI.add(playerEntityAI);
+		    }
+		    
+			
+			 
+		    goal.add(loadAnimatedEntity(frames3, "/playerAnim/", "texture3", loader, 54,
+		            new Vector3f(500, 10, 430), 0, 0, 0, 1, 1, 1, 1));
+		    
+		    goal.add(loadAnimatedEntity(frames4, "/playerAnimAI/", "texture4", loader, 54,
+		            new Vector3f(550, 10, 430), 0, 0, 0, 1, 1, 1, 1));
+	
 	}
 	
 
-	public AnimatedEntity loadAnimatedEntity(List<texturedModel> frames,String basePath, String texturePath, loader loader, int frameCount) {
+	public AnimatedEntity loadAnimatedEntity(List<texturedModel> frames,String basePath, String texturePath, loader loader, int frameCount,
+			Vector3f pos,float rotX,float rotY,float rotZ,float scale,float scaleX,float scaleY,float scaleZ) {
 	    //List<texturedModel> frames = new ArrayList<>();
 
 	    for (int i = 1; i <= frameCount; i++) {  // Chargement de 100 frames, ou plus selon tes besoins
@@ -234,16 +240,18 @@ public class putthemtogether {
 	        frames.add(textureModelPP);  // Ajoute ce modèle texturé à la liste des frames
 	    }
 
-	    return new AnimatedEntity(frames,new Vector3f(1900,100,1300),0,0,0,1,5,5,5);  // Retourne une instance de l'entité animée avec toutes les frames chargées
+	    return new AnimatedEntity(frames,pos,rotX,rotY,rotZ,scale,scaleX,scaleY,scaleZ);  // Retourne une instance de l'entité animée avec toutes les frames chargées
 	}
 	 	
-	
+	// return new AnimatedEntity(frames,new Vector3f(1900,100,1300),0,0,0,1,5,5,5);
 
 	
-	private void instanceManagerPlayer(List<texturedModel> frames,loader loader,List<AnimatedEntity> p
+	private void instanceManagerPlayer(loader loader,List<AnimatedEntity> p
 			)
 	{
-		AnimatedEntity playerEntity =loadAnimatedEntity( frames,"/playerAnim/", "texture", loader, 60);
+		List<texturedModel> frames=new ArrayList<>();
+		AnimatedEntity playerEntity =loadAnimatedEntity( frames,"/playerAnim/", "texture2", loader, 54,
+				new Vector3f(1900,100,1300),0,0,0,1,5,5,5);
 		p.add(playerEntity);
 		//loadAnimateModels( loader,textureModelPlayer);
 		//p.add(new animatedEntity(frames,new Vector3f(1900,80,1300),0,0,0,1,15,15,15));
@@ -365,7 +373,7 @@ public class putthemtogether {
 	   }
 	}
 	
-	private void setGravityEntities(List<player> p,List<player> balle,List<player> pAI,List<player>goal)
+	private void setGravityEntities(List<AnimatedEntity> p,List<player> balle,List<AnimatedEntity> pAI,List<AnimatedEntity>goal)
 	{
 		
 		 
@@ -380,6 +388,26 @@ public class putthemtogether {
 	for(int i=0;i<goal.size();i++)
 		 goal.get(i).move(-6.0f);
 	
+	}
+	
+	private void setLimit(AnimatedEntity joueur)
+	{
+		if(joueur.getPosition().x<300)
+		{
+			joueur.setPosition(new Vector3f(600,40,500));
+		}
+		if(joueur.getPosition().x>800)
+		{
+			joueur.setPosition(new Vector3f(600,40,500));
+		}
+		if(joueur.getPosition().z>800)
+		{
+			joueur.setPosition(new Vector3f(600,40,500));
+		}
+		if(joueur.getPosition().z<300)
+		{
+			joueur.setPosition(new Vector3f(600,40,500));
+		}
 	}
 	
 	private void setLimit(player joueur)
@@ -402,7 +430,8 @@ public class putthemtogether {
 		}
 	}
 	
-	private void separatePlayers(List<player> joueur,player balle)
+	
+	private void separatePlayers(List<AnimatedEntity> joueur,player balle)
 	{
 
 				
@@ -495,7 +524,7 @@ public class putthemtogether {
 		
 	}
 	
-	private void passerBall(player p, List<player> balle,Vector3f[] target_)
+	private void passerBall(AnimatedEntity p, List<player> balle,Vector3f[] target_)
 	{
 	if(Keyboard.isKeyDown(Keyboard.KEY_SPACE))
 	{
@@ -519,7 +548,7 @@ public class putthemtogether {
 	}
 	}
 	
-	private void followBall(List<player> joueur,player balle)
+	private void followBall(List<AnimatedEntity> joueur,player balle)
 	{
 	 Vector3f Distance = new Vector3f(joueur.get(0).getPosition().x-balle.getPosition().x,joueur.get(0).getPosition().y-balle.getPosition().y,joueur.get(0).getPosition().z-balle.getPosition().z);
 	 Vector3f Distance2 = new Vector3f(joueur.get(1).getPosition().x-balle.getPosition().x,joueur.get(1).getPosition().y-balle.getPosition().y,joueur.get(1).getPosition().z-balle.getPosition().z);
@@ -648,7 +677,7 @@ public class putthemtogether {
 		
 	}
 	
-	private void recupererBall(List<player> joueur,player balle)
+	private void recupererBall(List<AnimatedEntity> joueur,player balle)
 	{
 		Vector3f Distance = new Vector3f(joueur.get(0).getPosition().x-balle.getPosition().x,joueur.get(0).getPosition().y-balle.getPosition().y,joueur.get(0).getPosition().z-balle.getPosition().z);
 		 Vector3f Distance2 = new Vector3f(joueur.get(1).getPosition().x-balle.getPosition().x,joueur.get(1).getPosition().y-balle.getPosition().y,joueur.get(1).getPosition().z-balle.getPosition().z);
@@ -770,7 +799,7 @@ public class putthemtogether {
 		}
 		
 	}
-	private void followBall(player joueur)
+	private void followBall(AnimatedEntity joueur)
 	{
 		if(joueur.getfollow())
 		{
@@ -780,7 +809,7 @@ public class putthemtogether {
 		
 	}
 	
-	private void followBall(player joueur,player balle)
+	private void followBall(AnimatedEntity joueur,player balle)
 	{
 		if(joueur.getfollow())
 		{
@@ -790,7 +819,7 @@ public class putthemtogether {
 		
 	}
 	
-	private void attaquerAI(List<player> pAI,List<player> ball,float posBalleMinX, float posBalleMaxX,float posBalleMinZ,float posBalleMaxZ,Vector3f[] target)
+	private void attaquerAI(List<AnimatedEntity> pAI,List<player> ball,float posBalleMinX, float posBalleMaxX,float posBalleMinZ,float posBalleMaxZ,Vector3f[] target)
 	{
 		for(int i=0;i<pAI.size();i++)
 		{
@@ -812,7 +841,7 @@ public class putthemtogether {
 	  }
 	}
 	
-	private void stopMovementPlayer(player p)
+	private void stopMovementPlayer(AnimatedEntity p)
 	{
 		if(p.getHasTheBall()==false)
 		{
@@ -820,7 +849,7 @@ public class putthemtogether {
 		}
 	}
 	
-	private void attaquer(List<player> p,List<player> pAI,List<player> balle,float posBalleMinX, float posBalleMaxX,float posBalleMinZ,float posBalleMaxZ,Vector3f[] target_)
+	private void attaquer(List<AnimatedEntity> p,List<AnimatedEntity> pAI,List<player> balle,float posBalleMinX, float posBalleMaxX,float posBalleMinZ,float posBalleMaxZ,Vector3f[] target_)
 	{
 	   for(int i=0;i<p.size();i++)
 		if(p.get(i).getUP()==1 || p.get(i).getDOWN()==1 || p.get(i).getRIGHT()==1 || p.get(i).getLEFT()==1)
@@ -832,8 +861,8 @@ public class putthemtogether {
 		  for(int j=0;j<p.size();j++)
 			if(p.get(j).getHasTheBall()==false)
 			{
-				p.get(j).AIMovement(target_[j]);
-				defendreAI( p,  pAI, balle,posBalleMinX, posBalleMaxX, posBalleMinZ, posBalleMaxZ, target_);
+			p.get(j).AIMovement(target_[j]);
+			defendreAI( p,  pAI, balle,posBalleMinX, posBalleMaxX, posBalleMinZ, posBalleMaxZ, target_);
 				//p.get(j).setSpeedPlayer(0.02f,0.02f);
 			}
 		
@@ -845,7 +874,7 @@ public class putthemtogether {
 		
 	}
 	
-	private void defendreAI(List<player> p, List<player> pAI,List<player> balle,float posBalleMinX, float posBalleMaxX,float posBalleMinZ,float posBalleMaxZ,Vector3f[] target_)
+	private void defendreAI(List<AnimatedEntity> p, List<AnimatedEntity> pAI,List<player> balle,float posBalleMinX, float posBalleMaxX,float posBalleMinZ,float posBalleMaxZ,Vector3f[] target_)
 	{
 	   for(int i=0;i<p.size();i++)
 		if(p.get(i).getHasTheBall() && balle.get(0).getPosition().x>posBalleMinX && 
@@ -889,12 +918,24 @@ public class putthemtogether {
 		{
 		setGravityManager(manager,terrains);
 		manager.get(0).inputControlManager();
+		
+		float deltaTime=0.9f;
+		 for (int i = 0; i < 1; i++) 
+			  manager.get(i).updateAnimation(deltaTime);
+		 
 		}
 		
 	}
-	public void update(List<player> p,List<player> balle,List<player> pAI,List<player> goal,
+	public void update(List<AnimatedEntity> p,List<player> balle,List<AnimatedEntity> pAI,List<AnimatedEntity> goal,
 			List<player> supporters_element,passsytem pass)
 	{
+		float deltaTime=0.9f;
+		 for (int i = 0; i < 10; i++) 
+			  p.get(i).updateAnimation(deltaTime);
+		 
+		 for (int i = 0; i < 10; i++) 
+			  pAI.get(i).updateAnimation(deltaTime);
+		 
 		startGame+=0.05f;
 		updateMovementSupporters(supporters_element);
 		setGravityEntities(p,balle,pAI,goal);
@@ -939,7 +980,7 @@ public class putthemtogether {
 		roues2_.get(1).setParent(cars.get(0),terrains.get(0),-29.0f,-1.5f);
 	}
 	
-	private void initPositions(List<player> p,List<player> balle,List<player> pAI,List<player> goal,
+	private void initPositions(List<AnimatedEntity> p,List<player> balle,List<AnimatedEntity> pAI,List<AnimatedEntity> goal,
 			passsytem pass)
 	{
 		if(startGame>25)
